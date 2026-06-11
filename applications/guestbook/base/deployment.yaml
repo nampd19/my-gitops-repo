@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: guestbook-app
-        image: k8s.gcr.io/echoserver:1.4 # Hoặc một image đơn giản khác
+        image: registry.k8s.io/echoserver:1.10
         ports:
         - containerPort: 8080
 ---
@@ -31,4 +31,4 @@ spec:
   - port: 80
     targetPort: 8080
     protocol: TCP
-  type: NodePort # Hoặc NodePort nếu không có LoadBalancer
+  type: ClusterIP
